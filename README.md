@@ -1,4 +1,4 @@
-<img align="centre" width="1100" height="240" src="https://github.com/Habitat-RD/2023_MEI_TreGrwth/blob/main/docs/Habitat_banner.png?raw=true">
+<img align="centre" width="1100" height="240" src="https://github.com/Habitat-RD/TreeForecastR/blob/main/docs/Habitat_banner.png?raw=true">
 
 # Generalized urban tree growth 
 
@@ -43,7 +43,7 @@ The first product predicts `dbh` using historical and future climate data per in
 ## <u> Product 2: Predicting DBH distribution per species </u>
 The second product involves predicting `dbh`  based on the mean `age` of the species across a given region of interest, using historical and future climate data. This produces a tree growth distribution map, highlighting areas where a particular species will thrive or experience slow or stunted growth. By comparing historic and future tree growth distribution maps, we can identify suitable locations for replanting specific species or areas where certain species might face significant climatic stress.
 
-![alt text](https://github.com/Habitat-RD/2023_MEI_TreGrwth/blob/main/docs/UrbTreeGrowthFlowMap.JPG?raw=true)
+![alt text](https://github.com/Habitat-RD/TreeForecastR/blob/main/docs/UrbTreeGrowthFlowMap.JPG?raw=true)
 
 # Products
 
@@ -52,18 +52,18 @@ Below is an example of the two different outputs this workflow produces.
 ## Product 1: Incremental growth under future climate
 It uses a predicted growth curve on future climate to calculate the summed annual incremental growth of an individual tree. By comparing the predicted future and historic growth curves we can visualize whether an individual tree will thrive under the future climate, or experience climate stress. Red indicates climate stress whereas green indicates favorable growth.
 
-![alt text](https://github.com/Habitat-RD/2023_MEI_TreGrwth/blob/main/docs/Product1.png?raw=true)
+![alt text](https://github.com/Habitat-RD/TreeForecastR/blob/main/docs/Product1.png?raw=true)
 
 ## Product 2: Diameter at breast height distribution map
 It extends the model predictions over a large region of interest. The amount of days used to make predictions are standardized per species. Darker greens indicate higher `dbh` values attributed to the environmental covariates.
 
 ### Historic DBH distribution map for Acer saccharinum
 
-![alt text](https://github.com/Habitat-RD/2023_MEI_TreGrwth/blob/main/docs/Product2_hist.png?raw=true)
+![alt text](https://github.com/Habitat-RD/TreeForecastR/blob/main/docs/Product2_hist.png?raw=true)
 
 ### Future DBH distribution map for Acer saccharinum
 
-![alt text](https://github.com/Habitat-RD/2023_MEI_TreGrwth/blob/main/docs/Product2_fut.png?raw=true)
+![alt text](https://github.com/Habitat-RD/TreeForecastR/blob/main/docs/Product2_fut.png?raw=true)
 
 # Funding
 
