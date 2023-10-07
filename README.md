@@ -1,6 +1,6 @@
 <img align="centre" width="1100" height="240" src="https://github.com/Habitat-RD/TreeForecastR/blob/main/docs/Habitat_banner.png?raw=true">
 
-# Generalized urban tree growth 
+# TreeForecastR 
 
 Author: Kasselman Jurie Theron
 
@@ -16,7 +16,7 @@ The approach involves analyzing generalized growth patterns of various tree spec
 
 # TreeForecastR description
 
-The `TreeForecastR` tool estimates urban tree species growth rates based on machine learning (`Random Forest`) and draws on an ever expanding database of collected and cleaned municipal tree inventory databases. The tool combines urban tree inventories, for which information on individual tree age is recorded, along with a number of common environmental variables to predict annual growth rates under current and future climate scenarios using WorldClim.  
+The `TreeForecastR` tool estimates urban tree species growth rates based on machine learning (`Random Forest`) and draws on an ever expanding database of collected and cleaned municipal tree inventory databases. The tool combines urban tree inventories, for which information on individual tree age is recorded, along with a number of common environmental variables to predict annual growth rates under current and future climate scenarios using `WorldClim`.  
 
 The `TreeForecastR` tool was developed and made available with funding from the Quebec Ministry of Economy and Innovation. In this repository we provide the code developed for this project workflow with a dataset based on the public inventory for Montreal for users to test the tool. This tool was built in the R programming language.
 
@@ -26,10 +26,10 @@ The `TreeForecastR` tool was developed and made available with funding from the 
 The tool can be summarized into the following workflow.
 
 ## <u> Inventory cleaning </u>
-The workflow begins by cleaning the urban tree inventory (in this case the Montreal inventory) to form the basis of a comprehensive database. The data is preprocessed by cleaning tree species names and removing erroneous dates and DBH values. This database includes essential information such as tree species (`species`), diameter at breast height (`dbh`), tree age (`days`), and GPS coordinates (`X`,`Y`). The cleaned inventory is located in the `Data` folder of this repository. Tree age is measured as the number of days since the tree was planted and when the `dbh` measurement was taken. The cleaned dataset is provided in the repository (`Data/Urban_Tree_Growth.csv`).
+The workflow begins by cleaning the urban tree inventory (in this case the Montreal inventory) to form the basis of a comprehensive database. The data is preprocessed by cleaning tree species names and removing erroneous dates and DBH values. This database includes essential information such as tree species (`species`), diameter at breast height (`dbh`), tree age (`days`), and GPS coordinates (`X`,`Y`). Tree age is measured as the number of days since the tree was planted and when the `dbh` measurement was taken. The cleaned inventory is located in the `Data/` folder of this repository.
 
 ## <u> Input data extraction and preprocessing </u>
-Environmental covariates from sources such as `Google Earth Engine` and `WorldClim` are added to the dataset. Specifically, covariates that influence tree growth were selected which include the WorldClim bioclimatic variables, soil compaction and texture, urban climate zones, climate envelope, and human population. All environmental covariates are extracted for each tree location within the database using buffers of different sizes depending on the resolution of the covariate. We recommend that users employ an exploratory data analysis step to better understand the distribution of data before variable selection and model building to detect and remove outliers. Finally, it is recommended that the  `dbh` and `days` relationship is smoothed as a final preprocessing step.
+Environmental covariates from sources such as `Google Earth Engine` and `WorldClim` are added to the dataset. Specifically, covariates that influence tree growth were selected which include the `WorldClim` bioclimatic variables, soil compaction and texture, urban climate zones, climate envelope, and human population. All environmental covariates are extracted for each tree location within the database using buffers of different sizes depending on the resolution of the covariate. We recommend that users employ an exploratory data analysis step to better understand the distribution of data before variable selection and model building to detect and remove outliers. Finally, it is recommended that the  `dbh` and `days` relationship is smoothed as a final preprocessing step.
 
 ## <u> Variable selection and model building </u>
 Before building predictive `Random Forest` models of species-specific growth rates, variable selection should be performed to identify the most influential environmental covariates to reduce the complexity of the model and to ensure the model learns from influential covariates only. Hyperparameters can be tuned, and the `Random Forest` models can be validated to select the best performing models for prediction. Fine-tuned and validated `Random Forest` models are then used for predicting DBH. This is performed separately for each species.
