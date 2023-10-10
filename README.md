@@ -57,11 +57,11 @@ It uses a predicted growth curve on future climate to calculate the summed annua
 ## Product 2: Diameter at breast height distribution map
 It extends the model predictions over a large region of interest. The amount of days used to make predictions are standardized per species. Darker greens indicate higher `dbh` values attributed to the environmental covariates.
 
-### Historic DBH distribution map for Acer saccharinum
+### Historic DBH distribution map for Ulmus pumila
 
 ![alt text](https://github.com/Habitat-RD/TreeForecastR/blob/main/docs/Product2_hist.png?raw=true)
 
-### Future DBH distribution map for Acer saccharinum
+### Future DBH distribution map for Ulmus pumila
 
 ![alt text](https://github.com/Habitat-RD/TreeForecastR/blob/main/docs/Product2_fut.png?raw=true)
 
